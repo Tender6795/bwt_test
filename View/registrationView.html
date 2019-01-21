@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://bootstraptema.ru/snippets/form/2017/recaptcha/custom.css' rel='stylesheet' type='text/css'>
+	<script src='https://www.google.com/recaptcha/api.js?render=6Ld_vYoUAAAAAK3I-dxAw0HdWtIp7JuFaD7WSv6h'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+	<script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/validator.js"></script>
+	<script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/contact.js"></script>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-lg-8 col-lg-offset-2">
+
+				<h1 class="text-center">Форма регистрации </h1>
+
+				
+				<form  method="post" action="/Controller/registrationController.php" >
+
+					<div class="messages"></div>
+
+					<div class="controls">
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="form_firstname">Имя *</label>
+									<input id="form_firstname" type="text" name="firstname" class="form-control" placeholder="Пожалуйста введите своё имя *" required="required" data-error="Имя не введено">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="form_lastname">Фамилия *</label>
+									<input id="form_lastname" type="text" name="lastname" class="form-control" placeholder="Пожалуйста введите свою фамилию *" required="required" data-error="Фамлия не введена">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="form_email">Email *</label>
+									<input id="form_email" type="email" name="email" class="form-control" placeholder="Пожалуйста введите свой емейл *" required="required" data-error="Ошибка имейла">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="form_password">Пароль *</label>
+									<input id="form_password" type="password" name="password" class="form-control" placeholder="Пожалуйста введите свой пароль *" required="required" data-error="Введите пароль">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="form_date">Дата вашего рождения</label>
+									<input type="date" id="form_date" name="date" value="1989-01-06">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Ваш пол</label></br>									
+									<label for="man">Мужчина</label>
+									<input type="radio" name="gender" id="man" value="Мужчина" checked>
+									<label for="woman">Женщина</label>
+									<input type="radio" name="gender" id="woman" value="Женщина">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							
+
+							
+
+							<div class="col-md-12">
+								<input type="submit" class="btn btn-success btn-send" value="Зарегистрироваться">
+							</div>
+
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+
+		</div> 
+
+	</div> 
+
+	
+</body>
+</html>
