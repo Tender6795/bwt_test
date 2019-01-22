@@ -20,7 +20,8 @@ if ($link === false) {
 $query="INSERT INTO ".$dbComments."     VALUES ( Null ,'".$message."','".$_SESSION['id']."'); ";
 if(mysqli_query($link,$query))
 {
-    echo "Insertet";
+    header("Location: ../index.php ");
+    exit();
 }
 else
 {

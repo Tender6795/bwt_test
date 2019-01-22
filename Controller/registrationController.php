@@ -1,8 +1,8 @@
 <?php
 require_once "../Config.php";
-require_once  "../Model/UserModel.php";
-$user= new UserModel();
-$user->firstname= (isset($_POST["firstname"])) ? $_POST["firstname"] : "";
+require_once "../Model/UserModel.php";
+$user = new UserModel();
+$user->firstname = (isset($_POST["firstname"])) ? $_POST["firstname"] : "";
 $user->lastname = (isset($_POST["lastname"])) ? $_POST["lastname"] : "";
 $user->email = (isset($_POST["email"])) ? $_POST["email"] : "";
 $user->password = (isset($_POST["password"])) ? $_POST["password"] : "";
@@ -20,8 +20,9 @@ if ($user->firstname == "" || $user->lastname == "" || $user->email == "" || $us
 //echo $password+" ";
 //echo $dbName+" ";
 
-    $link = mysqli_connect($host,$usernameDb , $passwordDb, $dbName);
-    if ($link === false) {
+    //$link = mysqli_connect($host, $usernameDb, $passwordDb, $dbName);
+    $mysqli = new mysqli($host, $usernameDb, $passwordDb, $dbName);
+    if (mysqli_connect_errno()) {
         echo "Error connect to MySql({mysqli_errno_connect()}):{mysqli_errno_connect()}<br/>";
         exit();
     }
@@ -29,16 +30,19 @@ if ($user->firstname == "" || $user->lastname == "" || $user->email == "" || $us
     //echo  '<pre>'.print_r($user, 1)."</pre>";
 
     //$query="INSERT INTO `users`  (`id`,`firstname`, `lastname`,`email`,`password`, `date`, `gender`)  VALUES ( Null ,'".$user->firstname."','".$user->lastname."','".$user->email."','".$user->password."','".$user->date."', '".$user->gender."'); ";
-    $query="INSERT INTO ".$dbUser."     VALUES ( Null ,'".$user->firstname."','".$user->lastname."','".$user->email."','".$user->password."','".$user->date."', '".$user->gender."'); ";
+    $query = "INSERT INTO " . $dbUser . "     VALUES ( Null ,'" . $user->firstname . "','" . $user->lastname . "','" . $user->email . "','" . $user->password . "','" . $user->date . "', '" . $user->gender . "'); ";
+
 
     //  echo $query;
-    if(mysqli_query($link,$query))
-    {
+    if ($mysqli->query($query)) {
+//        header("Location: ../index.php ");
+//        exit();
+        $userid = $mysqli->insert_id;
+        session_start();
+        $_SESSION['id']=$userid ;
         header("Location: ../index.php ");
         exit();
-    }
-    else
-    {
+    } else {
         echo "Error add to base";
     }
 

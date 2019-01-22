@@ -15,6 +15,8 @@ else if($button=="Форма обратной связи"){
     exit();
 }
 else if($button=="Список фидбеков"){
+    header("Location: ../Controller/allCallbackController.php ");  //Пока что не работает
+    exit();
 
 }
 else if($button=="Выход"){
