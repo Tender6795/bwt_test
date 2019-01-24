@@ -1,75 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sing Up Form</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-	<link href='http://bootstraptema.ru/snippets/form/2017/recaptcha/custom.css' rel='stylesheet' type='text/css'>
-	<script src='https://www.google.com/recaptcha/api.js?render=6Ld_vYoUAAAAAK3I-dxAw0HdWtIp7JuFaD7WSv6h'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	
-	<!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
-	<script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/validator.js"></script>
-	<script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/contact.js"></script>
+    <title>Sing Up Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://bootstraptema.ru/snippets/form/2017/recaptcha/custom.css' rel='stylesheet' type='text/css'>
+    <script src='https://www.google.com/recaptcha/api.js?render=6Ld_vYoUAAAAAK3I-dxAw0HdWtIp7JuFaD7WSv6h'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
+    <script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/validator.js"></script>
+    <script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/contact.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js?render=6LdvvYsUAAAAAKwu6O273tyby5DGT5W8bxlAzX2D'></script>
+
+
+
 </head>
 <body>
 
-	<div class="container">
+<div class="container">
 
-		<div class="row">
+    <div class="row">
 
-			<div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-8 col-lg-offset-2">
 
-				<h1 class="text-center">Форма входа</h1>
-
-				
-				<form  method="post" action="../Controller/singUpController.php" >
-
-					<div class="messages"></div>
-
-					<div class="controls">
-
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_email">Email *</label>
-									<input id="form_email" type="email" name="email" class="form-control" placeholder="Пожалуйста введите свой емейл *" required="required" data-error="Ошибка имейла">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="form_email">Пароль *</label>
-									<input id="form_password" type="password" name="password" class="form-control" placeholder="Пожалуйста введите свой пароль *" required="required" data-error="Введите пароль">
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-						</div>
+            <h1 class="text-center">Форма входа</h1>
 
 
-						<div class="col-md-12">
-						<input type="submit" class="btn btn-success btn-send" value="Войти">
-									</div>
+            <form method="post" action="../Controller/singUpController.php">
 
-					</div>
+                <div class="messages"></div>
 
-				<!--</div>-->
+                <div class="controls">
 
-			</form>
-				<form action="../View/registrationView.html" method="Post">
-					<div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control"
+                                       placeholder="Пожалуйста введите свой емейл *" required="required"
+                                       data-error="Ошибка имейла">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
 
-						<input type="submit" class="btn btn-success btn-send" value="зарегистрироваться">
-					</div>
-				</form>
-		</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Пароль *</label>
+                                <input id="form_password" type="password" name="password" class="form-control"
+                                       placeholder="Пожалуйста введите свой пароль *" required="required"
+                                       data-error="Введите пароль">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
 
-	</div>
+
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success btn-send" value="Войти">
+                    </div>
+
+                </div>
+
+                <!--</div>-->
+
+            </form>
+            <form action="../View/registrationView.html" method="Post">
+                <div class="col-md-12">
+
+                    <input type="submit" class="btn btn-success btn-send" value="зарегистрироваться">
+                </div>
+            </form>
+            <div class="g-recaptcha" data-sitekey="6LdvvYsUAAAAAKwu6O273tyby5DGT5W8bxlAzX2D
+"></div>
+            <br>
+        </div>
+
+    </div>
 
 </div>
 

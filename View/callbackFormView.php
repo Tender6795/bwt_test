@@ -11,10 +11,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/validator.js"></script>
     <script src="http://bootstraptema.ru/snippets/form/2017/recaptcha/contact.js"></script>
+    <style>
+        body{
+            top:20px;
+            left:30px;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-
-
+<form action="../Controller/pagesController.php" method="post">
+    <input type="hidden" value="<?= $_SESSION["id"] ?>">
+    <input type="submit" value="Погода" class="btn btn-success btn-send" name="button">
+    <input type="submit" value="Форма обратной связи" class="btn btn-success btn-send" name="button">
+    <input type="submit" value="Список фидбеков" class="btn btn-success btn-send" name="button">
+    <input type="submit" value="Выход" class="btn btn-success btn-send" name="button">
+</form>
 <form action="../Controller/callbackController.php" method="post">
     <div class="messages"></div>
 
@@ -25,13 +37,13 @@
                 <div class="form-group">
                     <label for="form_msg">Сообщение *</label>
                     <textarea id="form_msg" type="text" name="message" class="form-control textarea"
-                           placeholder="Пожалуйста введите своё сообщение *" required="required" data-error="Не должно быть пустым"></textarea>
+                              placeholder="Пожалуйста введите своё сообщение *" required="required"
+                              data-error="Не должно быть пустым"></textarea>
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
 
         </div>
-
 
 
         <div class="col-md-12">
@@ -42,3 +54,4 @@
 </form>
 </body>
 </html>
+
